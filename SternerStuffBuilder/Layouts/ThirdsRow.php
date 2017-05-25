@@ -2,7 +2,7 @@
 
 namespace SternerStuffBuilder\Layouts;
 
-use SternerStuffBuilder\BuilderRow;
+use SternerStuffBuilder\Layouts\BuilderRow;
 use SternerStuffBuilder\Components\Button;
 
 class ThirdsRow extends BuilderRow {

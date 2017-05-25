@@ -3,7 +3,7 @@
 Plugin Name: Sterner Stuff Builder
 Plugin URI: https://sternerstuffdesign.com
 Description: An Advanced Custom Fields- and Bootstrap-based layout builder for WordPress
-Version: 1.0.0-beta
+Version: 1.0.0-beta.2
 Author: Sterner Stuff Design
 Author URI: https://sternerstuffdesign.com
 */
@@ -37,4 +37,4 @@ class SternerStuffBuilder {
 	}
 }
 
-SternerStuff::getInstance();
+SternerStuffBuilder::getInstance();

@@ -1,7 +1,7 @@
 <?php
 
 // namespace must be unique to each plugin
-namespace SternerStuffWordPress;
+namespace SternerStuffBuilder;
 
 /**
  * Class Autoloader
