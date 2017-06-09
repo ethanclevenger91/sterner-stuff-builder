@@ -15,19 +15,20 @@ class Builder {
   }
 
   public static function get_content($content) {
+    $builder_content = '';
+    $index = -1;
     if(get_field('use_builder')) {
-      if(have_rows('builder')) {
-        $content = '';
-        while(have_rows('builder')) {
-          $row_fields = the_row(true);
-          $layout = get_row_layout();
-          $layout = str_replace(' ', '', ucwords(str_replace('_', ' ', $layout)));
-          $layout_class = "\SternerStuffBuilder\Layouts\\".$layout."Row";
-          $row = new $layout_class($row_fields);
-          $content .= $row->getPrint();
-        }
+      remove_filter( 'the_content', 'wpautop' );
+      while (get_field('use_builder') && have_rows('builder') && ++$index !== false) {
+        $row_fields = the_row(true);
+        $layout = get_row_layout();
+        $layout = str_replace(' ', '', ucwords(str_replace('_', ' ', $layout)));
+        $layout_class = "\SternerStuffBuilder\Layouts\\".$layout."Row";
+        $row = new $layout_class($row_fields);
+        $row->setIndex($index);
+        $builder_content .= $row->getPrint();
       }
     }
-    return $content;
+    return (get_field('use_builder') ? $builder_content : $content);
   }
 }

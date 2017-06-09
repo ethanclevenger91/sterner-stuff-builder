@@ -5,7 +5,10 @@ namespace SternerStuffBuilder\Layouts;
 use SternerStuffBuilder\Layouts\BuilderRow;
 
 class ContentPlainRow extends BuilderRow {
-  function print() {
+
+  public $slug = 'content-plain';
+
+  function content() {
     ?>
     <div class="container">
   		<div class="row py-5">

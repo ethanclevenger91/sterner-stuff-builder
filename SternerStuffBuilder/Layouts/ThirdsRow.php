@@ -7,16 +7,18 @@ use SternerStuffBuilder\Components\Button;
 
 class ThirdsRow extends BuilderRow {
 
-  function print() {
+  public $slug = 'thirds';
+
+  function content() {
     ?>
     <div class="container">
   		<div class="row py-5">
   			<?php foreach($this->fields['sections'] as $section): ?>
   				<div class="col-12 col-md-4 text-center mb-5">
-            <div class="builder__thirds__third">
+            <div class="ssb-row--thirds__third">
               <?php echo $section['content']; ?>
               <?php if($section['with_buttons']): ?>
-                <div class="builder__thirds__third__buttons mt-3">
+                <div class="ssb-row--thirds__third__buttons mt-3">
                   <?php if(count($section['buttons']) > 1): ?>
                     <div class="row">
                       <?php $buttonCount = 0;
