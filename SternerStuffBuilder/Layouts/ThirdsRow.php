@@ -14,7 +14,7 @@ class ThirdsRow extends BuilderRow {
     <div class="container">
   		<div class="row py-5">
   			<?php foreach($this->fields['sections'] as $section): ?>
-  				<div class="col-12 col-md-4 text-center mb-5">
+  				<div class="col-12 col-lg-4 text-center mb-5">
             <div class="ssb-row--thirds__third">
               <?php echo $section['content']; ?>
               <?php if($section['with_buttons']): ?>
