@@ -28,9 +28,11 @@ class FlexImageLinksRow extends BuilderRow {
   <?php }
 
   function printItem($item) {
-    if($item['link']) echo '<a href="'.$item['link'].'">';
-    echo wp_get_attachment_image($item['image']['ID'], 'medium');
-    if($item['link']) echo '</a>';
+    echo '<div>';
+      if($item['link']) echo '<a href="'.$item['link'].'">';
+      echo wp_get_attachment_image($item['image']['ID'], 'medium');
+      if($item['link']) echo '</a>';
+    echo '</div>';
   }
 
 }
